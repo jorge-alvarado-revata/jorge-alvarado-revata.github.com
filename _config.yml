@@ -152,7 +152,7 @@ pwa:
 paginate: 10
 
 # The base URL of your site
-baseurl: "/_site/"
+baseurl: "/docs/"
 
 # ------------ The following options are not recommended to be modified ------------------
 
