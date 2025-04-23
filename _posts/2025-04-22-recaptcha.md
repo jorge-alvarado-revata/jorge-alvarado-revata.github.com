@@ -8,20 +8,20 @@ tags: [TAG]
 ## Implementando CAPTCHA en tu sitio web: reCAPTCHA vs Turnstile
 
 Toda interacción de una web pública que ofrece consulta o registro de datos corre el riesgo de ser visitada por bots, ahora con la aparición de la IA esta tendencia es mayor. Cualquier consulta o escritura en una aplicación Web es costo que afectará tu bolsillo. 
-Así que distinguir entre una visita humana y un bot es un necesidad para algunas WebApps. 
+Así que distinguir entre una visita humana y un bot es un necesidad para muchas aplicaciones Web. 
 En estos escenarios analizaremos dos alternativas conocidas: Google ReCAPTCHA y CloudFlare Turnstile.
 
 
 ## Google reCAPTCHA: El más conocido
 
 Google ofrece varias versiones de su sistema reCAPTCHA: Entre estas se encuentra la opción reCAPTCHA essential que es la que usaremos en el ejemplo. 
-Las otras opciones representan propuestas más integrales y multifactor. 
-[costos de reCAPTHA](https://cloud.google.com/recaptcha/docs/compare-tiers?hl=es-419)
+Las otras opciones representan propuestas más integrales y con características adicionales. 
+[costos de Google reCAPTHA](https://cloud.google.com/recaptcha/docs/compare-tiers?hl=es-419)
 
 **Implementación básica:**
 1. Regístrate en la [consola de reCAPTCHA](https://www.google.com/recaptcha/admin/create)
-2. Obtén tus claves (sitio y secreta)
-3. Agrega el script en el `<head>` de tu HTML:
+2. Obtén tus claves (pública del sitio y secreta)
+3. Agrega el script en el `<head>` en tu HTML o Web:
    ```html
    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
    ```
@@ -36,8 +36,9 @@ La versión v2 es la más conocida y la que muestra la casilla de 'No soy un rob
 
 ## Cloudflare Turnstile (smart CAPTCHA): Una alternativa prometedora
 
-Turnstile se presenta como una alternativa más centrada en la privacidad, en este caso también ofrece una alternativa empresarial en este caso para , pero esencialmente 
-la solución es gratuita, siendo un factor importante a considerar para agregar seguridad a sitios que no tienen mucho presupuesto para adquirir o comprometerse con un costo como es el caso de google ReCAPTCHA:
+Turnstile se presenta como una alternativa más centrada en la privacidad, en este caso, también ofrece una opción empresarial que permite cologar los widgets en ilimitados números de paginas.
+
+la solución general es gratuita, siendo un factor importante a considerar para todo website que requiera una protección de seguridad ante bots, y si es que no tienes planes de comprometerte con un costo a futuro como es el caso de google ReCAPTCHA:
 
 **Implementación básica:**
 1. Regístrate en el [panel de Cloudflare](https://dash.cloudflare.com/)
@@ -52,6 +53,7 @@ la solución es gratuita, siendo un factor importante a considerar para agregar 
    ```
 5. Verifica la respuesta en tu servidor usando la clave secreta
 
+Ambas soluciones son similares en la implementación FrontEnd.
 
 ## Comparativa de características
 
@@ -91,9 +93,9 @@ Para un sitio con **10 millones de verificaciones mensuales**:
 ## Consideraciones finales
 
 **Elige Google reCAPTCHA si:**
-- Ya utilizas muchos servicios de Google, es decir si utilizas como parte de la estrategia o lineamientos de la empresa, otros productos de Google.
-- Necesitas la confiabilidad de una solución probada por años, Google fue el primero en ofrecer una solución aceptable y segura.
-- Te interesa la integración con Analytics y otras herramientas de Google, que pueden agregar un enfoque más completo de las ventajas de los productos Google.
+- Ya utilizas muchos servicios de Google, es decir si los productos Google forman parte de la estrategia es parte de una adquisición mayor de servicios Google.
+- Necesitas la confiabilidad de una solución probada con experiencia.
+- Te interesa la integración con Analytics y otras herramientas de Google, que pueden dar una visión mayor de los beneficios de una integración de diversos productos Google, tales como Google Workspace, entre otros.
 
 **Elige Cloudflare Turnstile si:**
 - La privacidad de los usuarios es prioritaria
@@ -102,7 +104,7 @@ Para un sitio con **10 millones de verificaciones mensuales**:
 
 La decisión final dependerá de tus necesidades específicas, pero Turnstile ofrece una propuesta de valor convincente, especialmente para sitios con alto tráfico donde los costos de reCAPTCHA podrían escalar significativamente.
 
-Para el backend he publicado dos ejemplos que pueden ayudarte en la validación, básicamente son similares: se trata de validar la respuesta generada por el widget que se envía al backend, la diferencia está en el header de la llamada a los respectivos backend, esa diferencia es importante para evitar errores en la validación. Con esa respuesta en el front puedes continuar o confirmar una operación.
+Para la validación backend, he publicado dos ejemplos que pueden ayudarte en la confirmación de respuesta del widget, básicamente ambas soluciones son similares: se trata de validar la respuesta generada por el widget que se envía al backend de Google o Turnstile, la diferencia está en el header de la llamada a los respectivos backend, esa diferencia es importante para evitar errores en la validación. 
 
 [backend en Express de Gogle Recaptcha](https://github.com/jorge-alvarado-revata/ex-captcha-validate)
 
