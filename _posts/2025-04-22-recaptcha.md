@@ -72,7 +72,7 @@ la solución es gratuita, siendo un factor importante a considerar para agregar 
 - Versión Enterprise: Hasta 10,000 evaluaciones gratis*, $8 por hasta 100,000 evaluaciones mensuales y, luego, $1 por cada 1,000 evaluaciones
 
 **Cloudflare Turnstile:**
-- Completamente gratuito, sin límites de uso, la oferta se incluye como parte de una estrategia de otras alternativas de seguridad que ofrece Cloudflare.
+- Completamente gratuito, sin límites de uso, Cloudflare ofrece el plan Enterprise con habilitación de Widgets sin límites, es decir se puede agregar sin limites  el widget en distintos formularios o secciones web.
 
 ## Costos proyectados
 
@@ -81,11 +81,11 @@ Para un sitio con **100,000 verificaciones mensuales**:
 - Cloudflare Turnstile: $0
 
 Para un sitio con **2 millones de verificaciones mensuales**:
-- Google reCAPTCHA: ~$800/mes (por el millón adicional)
+- Google reCAPTCHA Enterprise: ~$2000/mes (incluye el descuento de las primeras 10,000 gratuitas)
 - Cloudflare Turnstile: $0
 
 Para un sitio con **10 millones de verificaciones mensuales**:
-- Google reCAPTCHA: ~$9,000/mes (por los 9 millones adicionales)
+- Google reCAPTCHA Enterprise: ~$10,000/mes (por los 9.9 millones adicionales)
 - Cloudflare Turnstile: $0
 
 ## Consideraciones finales
