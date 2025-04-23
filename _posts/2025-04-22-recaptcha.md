@@ -1,7 +1,7 @@
 ---
 title: Implementando CAPTCHA en tu sitio web (reCAPTCHA vs Turnstile)
 date: 2025-04-22 08:00:00 +0500
-categories: [Angular, Web Security, Web Development]
+categories: [node.js, Web Security, Web Development, backend]
 tags: [TAG]
 ---
 
@@ -62,7 +62,7 @@ la solución es gratuita, siendo un factor importante a considerar para agregar 
 | Accesibilidad          | Problemas conocidos                       | Mejor rendimiento general                          |
 | Integración            | Ampliamente soportado                     | Soporte creciente                                  |
 | Implementación Front   | Sencillo de incluir                       | Sencillo de incluir                                |
-| Implementación Back    | Prestar atención a las respuestas         | Sencillo de validar                                |
+| Implementación Back    | La validación de google es x-www-form     | La validación de cloudflare es json                |
 
 ## Estructura de costos
 
@@ -102,6 +102,10 @@ Para un sitio con **10 millones de verificaciones mensuales**:
 
 La decisión final dependerá de tus necesidades específicas, pero Turnstile ofrece una propuesta de valor convincente, especialmente para sitios con alto tráfico donde los costos de reCAPTCHA podrían escalar significativamente.
 
-¿Qué solución CAPTCHA estás utilizando actualmente? ¿Has considerado cambiar entre estas alternativas?
+Para el backend he publicado dos ejemplos que pueden ayudarte en la validación, básicamente son similares: se trata de validar la respuesta generada por el widget que se envía al backend, la diferencia está en el header de la llamada a los respectivos backend, esa diferencia es importante para evitar errores en la validación. Con esa respuesta en el front puedes continuar o confirmar una operación.
 
-En una próxima entrega revisaremos las alternativas backend para realizar las validaciones.
+[backend en Express de Gogle Recaptcha](https://github.com/jorge-alvarado-revata/ex-captcha-validate)
+
+[backend en Express de Cloudflare Turnstile](https://github.com/jorge-alvarado-revata/ex-captcha-turnstile-validate)
+
+¿Qué solución CAPTCHA estás utilizando actualmente? ¿Has considerado integrar estas alternativas?
