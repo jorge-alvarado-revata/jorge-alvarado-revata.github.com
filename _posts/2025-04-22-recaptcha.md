@@ -1,5 +1,5 @@
 ---
-title: Implementando CAPTCHA en tu sitio web: reCAPTCHA vs Turnstile
+title: Implementando CAPTCHA en tu sitio web (reCAPTCHA vs Turnstile)
 date: 2025-04-22 08:00:00 +0500
 categories: [Angular, Web Security, Web Development]
 tags: [TAG]
@@ -7,12 +7,16 @@ tags: [TAG]
 
 ## Implementando CAPTCHA en tu sitio web: reCAPTCHA vs Turnstile
 
-Toda interacción de una web pública que ofrece consulta o registro de datos corre el riesgo de ser visitada por bots, ahora con la aparición de la IA esta tendencia es mayor. Cualquier consulta o escritura en una aplicación Web es costo que afectará tu bolsillo. Así que distinguir entre una visita humana y un bot es un necesidad para algunas WebApps. En estos escenarios analizaremos dos alternativas conocidas: Google ReCAPTCHA y CloudFlare Turnstile.
+Toda interacción de una web pública que ofrece consulta o registro de datos corre el riesgo de ser visitada por bots, ahora con la aparición de la IA esta tendencia es mayor. Cualquier consulta o escritura en una aplicación Web es costo que afectará tu bolsillo. 
+Así que distinguir entre una visita humana y un bot es un necesidad para algunas WebApps. 
+En estos escenarios analizaremos dos alternativas conocidas: Google ReCAPTCHA y CloudFlare Turnstile.
 
 
 ## Google reCAPTCHA: El más conocido
 
-Google ofrece varias versiones de su sistema reCAPTCHA: Entre estas se encuentra la opción reCAPTCHA essential que es la que usaremos en el ejemplo. Las otras opciones representan propuestas más integrales y multifactor. [costos de reCAPTHA](https://cloud.google.com/recaptcha/docs/compare-tiers?hl=es-419)
+Google ofrece varias versiones de su sistema reCAPTCHA: Entre estas se encuentra la opción reCAPTCHA essential que es la que usaremos en el ejemplo. 
+Las otras opciones representan propuestas más integrales y multifactor. 
+[costos de reCAPTHA](https://cloud.google.com/recaptcha/docs/compare-tiers?hl=es-419)
 
 **Implementación básica:**
 1. Regístrate en la [consola de reCAPTCHA](https://www.google.com/recaptcha/admin/create)
@@ -27,11 +31,13 @@ Google ofrece varias versiones de su sistema reCAPTCHA: Entre estas se encuentra
    ```
 5. Verifica la respuesta en tu servidor usando la clave secreta
 
-reCAPTCHA v3 funciona en segundo plano sin interrumpir a los usuarios, asignando una puntuación de riesgo que puedes utilizar para tomar decisiones. La versión v2 es la más conocida y la que muestra la casilla de 'No soy un robot'
+reCAPTCHA v3 funciona en segundo plano sin interrumpir a los usuarios, asignando una puntuación de riesgo que puedes utilizar para tomar decisiones. 
+La versión v2 es la más conocida y la que muestra la casilla de 'No soy un robot'.
 
 ## Cloudflare Turnstile (smart CAPTCHA): Una alternativa prometedora
 
-Turnstile se presenta como una alternativa más centrada en la privacidad, en este caso también ofrece una alternativa empresarial, pero esencialmente la solución es gratuita, siendo un factor importante a considerar para agregar seguridad a sitios que no tienen mucho presupuesto para adquirir o comprometerse con un costo como es el caso de google ReCAPTCHA:
+Turnstile se presenta como una alternativa más centrada en la privacidad, en este caso también ofrece una alternativa empresarial en este caso para , pero esencialmente 
+la solución es gratuita, siendo un factor importante a considerar para agregar seguridad a sitios que no tienen mucho presupuesto para adquirir o comprometerse con un costo como es el caso de google ReCAPTCHA:
 
 **Implementación básica:**
 1. Regístrate en el [panel de Cloudflare](https://dash.cloudflare.com/)
